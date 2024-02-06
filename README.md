@@ -33,7 +33,7 @@ conda install -r requirements.txt
 python app.py
 ```
 
-#### Fine-tuning
+#### Fine-tuning:
 
 If you would like to change any values, you can adust the parameters at the beginning of the ```app.py``` file
 
@@ -42,5 +42,5 @@ If you would like to change any values, you can adust the parameters at the begi
 chance_to_like = .93
 min_wait_time = .5
 max_wait_time = 2
-wait_for_reload_time = 240
+max_wait_for_like_button = 240
 ``````
