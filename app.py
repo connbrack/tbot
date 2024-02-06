@@ -6,7 +6,7 @@ from TinderNav import TinderNav
 chance_to_like = .93
 min_wait_time = .5
 max_wait_time = 2
-wait_for_reload_time = 240
+max_wait_for_like_button = 240
 
 
 def main():
@@ -22,7 +22,7 @@ def main():
     try:
         while True:
             time.sleep(random.uniform(min_wait_time, max_wait_time))
-            tbot.wait_for_like_button(wait_for_reload_time)
+            tbot.wait_for_like_button(max_wait_for_like_button)
             try:
                 if random.random() < chance_to_like:
                     tbot.like()
