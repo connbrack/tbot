@@ -34,12 +34,19 @@ python app.py
 ```
 
 #### Keep undetected-chromedriver updated:
-The chromedriver uses the browser installed on your computer. As your browser updates, you may need to update the package as well. To do this run:
+
+If you get the error:
+```
+urllib.error.HTTPError: HTTP Error 404: Not Found
+``` 
+
+it may be that your package is out of date. The chromedriver uses the browser installed on your computer. As your browser updates, you may need to update the package as well. To do this run:
 
 ```
 pip install undetected-chromedriver -U
 ```
 Based on: https://github.com/ultrafunkamsterdam/undetected-chromedriver/issues/1511
+
 
 #### Fine-tuning:
 
