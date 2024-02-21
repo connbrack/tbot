@@ -1,3 +1,4 @@
+import os
 import time
 import undetected_chromedriver as uc
 from selenium.webdriver.common.by import By
@@ -15,10 +16,13 @@ class TinderNav:
         """
         Creates and returns a new Chrome webdriver with specified options.
         """
+        file_dir = os.path.dirname(__file__)
+        data_dir = os.path.join(file_dir, 'browser-data')
+
         options = uc.ChromeOptions()
         options.headless = False
         options.add_argument("--enable-geolocation")
-        options.add_argument("--user-data-dir=./browser-data")
+        options.add_argument(f"--user-data-dir={data_dir}")
         driver = uc.Chrome(options=options)
         self.driver = driver
 
