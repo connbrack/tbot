@@ -45,14 +45,14 @@ class TinderNav:
         self.driver.get(url)
 
     def wait_for_like_button(self, wait_for_reload_time=60):
-        WebDriverWait(self.driver, wait_for_reload_time).until(EC.element_to_be_clickable((By.XPATH, "//button[span/span/span[text()='Like']]")))
+        WebDriverWait(self.driver, wait_for_reload_time).until(EC.element_to_be_clickable((By.XPATH, "//button[contains(@class, 'button') and .//span[text()='Like']]")))
 
     def like(self):
         """
         Finds and clicks the 'Like' button on Tinder.
         """
         button = self.driver.find_element(
-            By.XPATH, "//button[span/span/span[text()='Like']]")
+            By.XPATH, "//button[contains(@class, 'button') and .//span[text()='Like']]")
         button.click()
 
     def dislike(self):
@@ -60,7 +60,7 @@ class TinderNav:
         Finds and clicks the 'Nope' button on Tinder.
         """
         button = self.driver.find_element(
-            By.XPATH, "//button[span/span/span[text()='Nope']]")
+            By.XPATH, "//button[contains(@class, 'button') and .//span[text()='Nope']]")
         button.click()
 
     def quit(self):
